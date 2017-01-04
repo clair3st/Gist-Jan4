@@ -7,7 +7,7 @@
   <nav>
     <ul>
       <li><a href="{{ request.route_url('home') }}">Home</a></li>
-      <li><a href="{{ request.route_url('profile') }}">Profile</a></li>
+      <li><a href="{{ request.route_url('profile', user=users.id) }}">Profile</a></li>
       <li><a href="{{ request.route_url('register') }}">Register</a></li>
       <li><a href="{{ request.route_url('login') }}">Login</a></li>
       <li><a href="{{ request.route_url('logout') }}">Logout</a></li>
