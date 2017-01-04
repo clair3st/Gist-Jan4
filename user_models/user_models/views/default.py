@@ -33,3 +33,19 @@ def detail_page(request):
     """One entry for detail veiw."""
     data = request.dbsession.query(User).get(request.matchdict['user'])
     return {'users': data}
+
+
+@view_config(route_name="login",
+             renderer="../templates/login.jinja2")
+def login_view(request):
+    if request.POST:
+        username = request.POST["username"]
+        password = request.POST["password"]
+        if check_credentials(username, password):
+            auth_head = remember(request, username)
+            return HTTPFound(
+                request.route_url("home"),
+                headers=auth_head
+            )
+
+    return {}
