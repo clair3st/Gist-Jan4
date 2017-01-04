@@ -1,0 +1,37 @@
+{% extends "layout.jinja2" %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+<h1>Register as a new User/h1>
+<form method="POST">
+    <p>
+        <label for="firstname">First name: </label>
+        <input type="text" name="firstname" />
+    </p>
+    <p>
+        <label for="lastname">Last name: </label>
+        <input type="text" name="lastname" />
+    </p>
+    <p>
+        <label for="username">Username: </label>
+        <input type="number" name="username" />
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="text" name="password" />
+    </p>
+    <p>
+        <label for="food">Favourite Food: </label>
+        <input type="text" name="food" />
+    </p>
+    <p>
+        <label for="email">Email: </label>
+        <textarea name="email"></textarea>
+    </p>
+    <p>
+        <input type="submit" name="Add Expense" />
+    </p>
+</form>
+
+{% endblock %}
